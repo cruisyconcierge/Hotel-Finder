@@ -1,52 +1,30 @@
-/** @type {import('tailwindcss').Config} */
-module.exports = {
-  // 1. Content: Points to all files where you use Tailwind classes
-  content: [
-    "./src/**/*.{js,jsx,ts,tsx}",
-    "./public/index.html"
-  ],
-  theme: {
-    extend: {
-      // 2. Colors: Defining the specific "Cruisy" brand palette
-      colors: {
-        cruisy: {
-          50: '#f0fdfa',  // Very light background wash
-          100: '#ccfbf1', // Light buttons/accents
-          200: '#99f6e4',
-          300: '#5eead4',
-          400: '#2dd4bf',
-          500: '#14b8a6', // Main Brand Color (The Logo Teal)
-          600: '#0d9488', // Hover states
-          700: '#0f766e',
-          800: '#115e59',
-          900: '#134e4a', // Deep text/footers
-        },
-        ocean: {
-          DEFAULT: '#0ea5e9', // For secondary accents (sky blue)
-        }
-      },
-      // 3. Fonts: Ensuring a modern, clean look
-      fontFamily: {
-        sans: [
-          'Inter', 
-          'ui-sans-serif', 
-          'system-ui', 
-          '-apple-system', 
-          'BlinkMacSystemFont', 
-          'Segoe UI', 
-          'Roboto', 
-          'sans-serif'
-        ],
-      },
-      // 4. Border Radius: Making cards slightly rounder for that "soft/breezy" feel
-      borderRadius: {
-        'xl': '1rem',
-        '2xl': '1.5rem',
-        '3xl': '2rem',
-      }
-    },
+{
+  "name": "cruisy-hotel-finder",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
+    "preview": "vite preview"
   },
-  plugins: [
-    // Add plugins here if needed (e.g., @tailwindcss/forms)
-  ],
+  "dependencies": {
+    "lucide-react": "^0.454.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "devDependencies": {
+    "@types/react": "^18.3.3",
+    "@types/react-dom": "^18.3.0",
+    "@vitejs/plugin-react": "^4.3.1",
+    "autoprefixer": "^10.4.20",
+    "eslint": "^9.9.0",
+    "eslint-plugin-react": "^7.35.0",
+    "eslint-plugin-react-hooks": "^5.1.0-rc.0",
+    "eslint-plugin-react-refresh": "^0.4.9",
+    "postcss": "^8.4.41",
+    "tailwindcss": "^3.4.10",
+    "vite": "^5.4.1"
+  }
 }
