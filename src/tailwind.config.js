@@ -1,46 +1,52 @@
 /** @type {import('tailwindcss').Config} */
-export default {
+module.exports = {
+  // 1. Content: Points to all files where you use Tailwind classes
   content: [
-    "./index.html",
-    "./src/**/*.{js,ts,jsx,tsx}",
+    "./src/**/*.{js,jsx,ts,tsx}",
+    "./public/index.html"
   ],
   theme: {
     extend: {
+      // 2. Colors: Defining the specific "Cruisy" brand palette
       colors: {
-        brand: {
-          DEFAULT: '#34a4b8',
-          dark: '#267a8a',
+        cruisy: {
+          50: '#f0fdfa',  // Very light background wash
+          100: '#ccfbf1', // Light buttons/accents
+          200: '#99f6e4',
+          300: '#5eead4',
+          400: '#2dd4bf',
+          500: '#14b8a6', // Main Brand Color (The Logo Teal)
+          600: '#0d9488', // Hover states
+          700: '#0f766e',
+          800: '#115e59',
+          900: '#134e4a', // Deep text/footers
         },
-        luxury: {
-          dark: '#0f172a',
-          sand: '#fdfbf7',
+        ocean: {
+          DEFAULT: '#0ea5e9', // For secondary accents (sky blue)
         }
       },
+      // 3. Fonts: Ensuring a modern, clean look
       fontFamily: {
-        sans: ['Montserrat', 'sans-serif'],
-        display: ['Russo One', 'sans-serif'],
+        sans: [
+          'Inter', 
+          'ui-sans-serif', 
+          'system-ui', 
+          '-apple-system', 
+          'BlinkMacSystemFont', 
+          'Segoe UI', 
+          'Roboto', 
+          'sans-serif'
+        ],
       },
-      animation: {
-        'float': 'float 6s ease-in-out infinite',
-        'slide-up': 'slideUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards',
-        'pulse-glow': 'pulse-glow 2s infinite',
-      },
-      keyframes: {
-        float: {
-          '0%, 100%': { transform: 'translateY(0px)' },
-          '50%': { transform: 'translateY(-10px)' },
-        },
-        slideUp: {
-          'from': { opacity: '0', transform: 'translateY(40px)' },
-          'to': { opacity: '1', transform: 'translateY(0)' },
-        },
-        'pulse-glow': {
-          '0%': { boxShadow: '0 0 0 0 rgba(52, 164, 184, 0.4)' },
-          '70%': { boxShadow: '0 0 0 15px rgba(52, 164, 184, 0)' },
-          '100%': { boxShadow: '0 0 0 0 rgba(52, 164, 184, 0)' },
-        }
+      // 4. Border Radius: Making cards slightly rounder for that "soft/breezy" feel
+      borderRadius: {
+        'xl': '1rem',
+        '2xl': '1.5rem',
+        '3xl': '2rem',
       }
     },
   },
-  plugins: [],
+  plugins: [
+    // Add plugins here if needed (e.g., @tailwindcss/forms)
+  ],
 }
